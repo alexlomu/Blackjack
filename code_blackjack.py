@@ -1,5 +1,5 @@
 from random import choice, sample
-
+#Creamos un diccionario asignandole a cada carta su valor
 cartas = {
     chr(0x1f0a1): 11,
     chr(0x1f0a2): 2,
@@ -15,7 +15,7 @@ cartas = {
     chr(0x1f0ad): 10,
     chr(0x1f0ae): 10,
 }
-
+#Mostramos las cartas y las puntuaciones de cada una
 print("Cartas: {}".format(" ".join(cartas.keys())))
 print("Puntos: {}".format(list(cartas.values())))
 
@@ -30,7 +30,7 @@ for carta in sorted(cartas.keys()):
 print("3\ Black Jack")
 lista_cartas = list(cartas)
 
-
+#Sacamos las dos primeras cartas del jugador y le decimos su puntuacíon actual
 print("Ha seleccionado:", end=" ")
 carta = choice(lista_cartas)
 score = cartas[carta]
@@ -40,6 +40,7 @@ score += cartas[carta]
 print(carta, end=" ")
 print(" >>> su puntuación es de", score)
 
+#En el caso de que el jugador quiera pedir más cartas sólo podrá ser mientras su puntuacíon sea inferior a 21
 plantarse = False
 while score < 21 and plantarse == False:
     pedir_carta = input("Deseas pedir una carta? Responde si o no: ")
@@ -53,13 +54,13 @@ while score < 21 and plantarse == False:
         plantarse = True
     else:
         print("Introduce una respuesta válida.")
-
+#Le damos dos cartas a la banca y mostramos su puntuación
 main_banca = sample(lista_cartas, 2)
 score_banca = sum(cartas[carta] for carta in main_banca)
-print("La banca tiene: {} {}  >> su score es {}".format(main_banca[0],
+print("La banca tiene: {} {} {} >> su score es {}".format(main_banca[0],
                                                           main_banca[1],
                                                           score_banca))
-
+#Los diferentes resultados de la partida dependiendo del score
 if score > 21:
     print("Te has pasado, gana la banca.")
 if score == score_banca:
