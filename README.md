@@ -6,7 +6,8 @@
  ![blackjack_figma](https://user-images.githubusercontent.com/91721507/142742427-72d606c6-347f-440e-9e46-99e27cf4e58a.JPG)
 
 El código del juego es el siguiente:
-```from random import choice, sample
+```
+from random import choice, sample
 #Creamos una diccionario asignandole a cada carta su valor
 cartas = {
     chr(0x1f0a1): 11,
