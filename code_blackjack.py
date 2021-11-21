@@ -28,11 +28,11 @@ def play():
     print("2\ Iteración ordenada sobre un diccionario")
     for carta in sorted(cartas.keys()):
         print("la carta {} vale {}".format(carta, cartas[carta]))
-
+    #Creamos una lista con el diccionario de cartas
     print("3\ Black Jack")
     lista_cartas = list(cartas)
 
-    #Sacamos las dos primeras cartas del jugador y le decimos su puntuacíon actual
+    #Sacamos las dos primeras cartas del jugador, sumamos sus valores y le decimos su puntuacíon actual
     print("Ha seleccionado:", end=" ")
     carta = choice(lista_cartas)
     score = cartas[carta]
